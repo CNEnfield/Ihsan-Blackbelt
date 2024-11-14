@@ -9,15 +9,30 @@ EditorBuildSettings:
     path: Assets/Scenes/Main Menu.unity
     guid: deabeba49fa90744ba23dc3b9a5ee5ae
   - enabled: 1
-    path: Assets/Scenes/TheLastOutlaw.unity
-    guid: 4744a39d0055e6647a9939bb3d0074cd
-  - enabled: 1
     path: Assets/Scenes/SampleScene.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
   - enabled: 1
     path: Assets/Scenes/Game Over.unity
     guid: 170c59af8f3e99d48aa899b14cdf769e
   - enabled: 1
+    path: Assets/Scenes/TheLastOutlaw.unity
+    guid: 4744a39d0055e6647a9939bb3d0074cd
+  - enabled: 1
     path: Assets/Scenes/Level2TheLastOutlaw 1.unity
     guid: c9af18ef3c6802644a0e8ff0cbf117a3
+  - enabled: 1
+    path: Assets/Scenes/Level3TheLastOutlaw 2.unity
+    guid: 703991d0143a804438e2383cec58e504
+  - enabled: 1
+    path: Assets/Scenes/You Win.unity
+    guid: 1645656f75924f74ab09c5b37030bafb
+  - enabled: 1
+    path: Assets/Scenes/Controlls.unity
+    guid: d5a16ba9ea47a2a44b74c5048ffae7cf
+  - enabled: 1
+    path: Assets/Scenes/Instructions.unity
+    guid: a4f4bec21605cf6418f5c1c30eec6690
+  - enabled: 1
+    path: Assets/Scenes/Credits.unity
+    guid: da6936fac707b93419eef667252fa1ea
   m_configObjects: {}

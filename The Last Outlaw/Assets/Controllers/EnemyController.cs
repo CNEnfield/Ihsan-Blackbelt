@@ -17,6 +17,8 @@ public class EnemyController : MonoBehaviour
     public GameObject enemyBullet;
     public Transform spawnPoint;
     public float enemySpeed;
+    public Animator anim;
+    public AudioSource EnemyFire;
 
     // Start is called before the first frame update
     void Start()
@@ -36,19 +38,33 @@ public class EnemyController : MonoBehaviour
             {
                 agent.SetDestination(target.position);
 
+                //anim.SetBool("ShouldMove", true);
+
                 if (distance <= agent.stoppingDistance)
                 {
                     // Attack the target
                     // Face the target
+                    //anim.SetBool("ShouldMove", false);
                     FaceTarget();
                     ShootAtPlayer();
                 }
             }
+
+            if(agent.velocity != Vector3.zero)
+            {
+                anim.SetBool("ShouldMove", true);
+            }
+            else
+            {
+                anim.SetBool("ShouldMove", false);
+            }
+ 
         }
         else
         {
             if (distance <= lookRadius)
             {
+                //anim.SetBool("ShouldMove", false);
                 FaceTarget();
                 ShootAtPlayer();
             }
@@ -75,10 +91,12 @@ public class EnemyController : MonoBehaviour
     void ShootAtPlayer()
     {
         bulletTime -= Time.deltaTime;
-
+        anim.SetBool("ShouldMove", false);
         if (bulletTime > 0) return;
 
         bulletTime = timer;
+
+        EnemyFire.Play();
 
         GameObject bulletObj = Instantiate(enemyBullet, spawnPoint.transform.position, spawnPoint.transform.rotation) as GameObject;
         Rigidbody bulletRig = bulletObj.GetComponent<Rigidbody>();

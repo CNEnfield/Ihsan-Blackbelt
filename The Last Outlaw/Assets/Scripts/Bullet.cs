@@ -15,7 +15,7 @@ public class Bullet : MonoBehaviour
             if (playerHealth.health <= 0)
             {
                 //This needs to be updated to take us to the new scene using scenemanager
-                SceneManager.LoadScene(3);
+                SceneManager.LoadScene(2);
             }
 
             Destroy(gameObject);

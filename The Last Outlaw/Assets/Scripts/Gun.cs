@@ -8,7 +8,7 @@ public class NewBehaviourScript : MonoBehaviour
     public Camera fpsCam;
     public ParticleSystem muzzleFlash;
     public GameObject impactEffect;
-
+    public AudioSource GunFire;
     // Update is called once per frame
     void Update()
     {
@@ -21,7 +21,7 @@ public class NewBehaviourScript : MonoBehaviour
     void Shoot()
     {
         muzzleFlash.Play();
-
+        GunFire.Play();
         RaycastHit hit;
       if(Physics.Raycast(fpsCam.transform.position, fpsCam.transform.forward, out hit, range))
         {
@@ -31,7 +31,10 @@ public class NewBehaviourScript : MonoBehaviour
             if(target != null)
             {
                 target.TakeDamage(damage);
+
             }
+
+    
 
             Instantiate(impactEffect, hit.point, Quaternion.LookRotation(hit.normal));
         }
